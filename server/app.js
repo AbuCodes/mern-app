@@ -1,11 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
 const placesRoutes = require('./routes/places-routes');
 const usersRoutes = require('./routes/users-routes');
 const HttpError = require('./models/http-error');
 
+dotenv.config({ path: './config.env' });
 const app = express();
 
 app.use(bodyParser.json());
